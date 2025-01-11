@@ -1,0 +1,100 @@
+EVENT DRIVEN ARCHITECHER:-
+--------------------------
+
+https://www.youtube.com/watch?v=O2j8k7j9mLM
+
+https://github.com/listentolearn/aws-event-driven-architecture
+
+
+>> this is for events to decouple an application components.
+
+
+in this we have mainly four components
+
+1. event producers
+
+2. event ingestion
+
+3. event stream
+
+4. event consumers
+
+used in many use cases
+
+>> loosely coupled applications.
+
+>> add new features without changing existing applications.
+
+>> scale and fail components independently.
+
+
+
+
+
+
+>> create S3 bucket  
+
+
+>> create SNS topic
+
+in the process of creating sns topic change the access policys for s3 and sqs .
+
+>> create SQS
+
+change the access policy place the json
+
+as like that create a the 3 queues
+
+>> create IAM role for lambda function
+
+go through lambda function policy json 
+
+create 3 for 3 lambdas
+
+
+
+>>  create lambda
+
+create the 3 lambda functions
+
+
+go to s3 > properties > event notifications > create'
+
+in that attach to sns topic
+
+
+then go to sns and subcrribe the sqs 
+
+write filter policy  for put
+
+as like that subcribe 2nd sqs
+
+write filter policy  for copy
+
+
+go to sqs for trigger the lambda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+

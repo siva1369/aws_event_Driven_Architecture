@@ -1,0 +1,37 @@
+{
+  "Version": "2008-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "Stmt1234",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "lambda.amazonaws.com"
+      },
+      "Action": [
+        "sqs:ReceiveMessage",
+        "sqs:sendMessage"
+      ],
+      "Resource": "arn:aws:sqs:ap-south-1:390834722867:sqs2",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:lambda:ap-south-1:390834722867:eventbase2"
+        }
+      }
+    },
+    {
+      "Sid": "Stmt12345",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:ap-south-1:390834722867:sqs2",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:sns:ap-south-1:390834722867:mytopic2"
+        }
+      }
+    }
+  ]
+}

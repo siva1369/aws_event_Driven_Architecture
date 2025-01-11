@@ -1,0 +1,40 @@
+{
+  "Version": "2008-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__default_statement_ID",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "SNS:Publish",
+      "Resource": "arn:aws:sns:ap-south-1:390834722867:mytopic1",
+      "Condition": {
+        "StringEquals": {
+          "aws:SourceAccount": "390834722867"
+        },
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:s3:*:*:enentdrivern"
+        }
+      }
+    },
+    {
+      "Sid": "sqs_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "sqs.amazonaws.com"
+      },
+      "Action": "sns:Subscribe",
+      "Resource": "arn:aws:sns:ap-south-1:390834722867:mytopic1",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": [
+            "arn:aws:sqs:ap-south-1:390834722867:sqs1",
+            "arn:aws:sqs:ap-south-1:390834722867:sqs1"
+          ]
+        }
+      }
+    }
+  ]
+}
