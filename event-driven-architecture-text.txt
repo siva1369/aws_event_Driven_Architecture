@@ -1,10 +1,6 @@
 EVENT DRIVEN ARCHITECHER:-
 --------------------------
 
-https://www.youtube.com/watch?v=O2j8k7j9mLM
-
-https://github.com/listentolearn/aws-event-driven-architecture
-
 
 >> this is for events to decouple an application components.
 
